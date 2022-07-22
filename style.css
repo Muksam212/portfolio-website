@@ -129,6 +129,13 @@ hr {
   background-color: var(--off-white);
 }
 
+.ow1{
+  background-color: white;
+}
+
+.ow2{
+  background-color: var(--off-white);
+}
 /* unordered list section */
 
 .list-section {

@@ -12,6 +12,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="script.js"></script>
+
+    <!-- This script will make email send-->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
 
 </head>
@@ -26,8 +30,8 @@
                 <li><a href="#home" class="menu-btn">Home</a></li>
                 <li><a href="#about" class="menu-btn">About</a></li>
                 <li><a href="#services" class="menu-btn">Services</a></li>
-                <li><a href="#skills" class="menu-btn">Skills</a></li>
-                <li><a href="#experiences" class="menu-btn"> Experiences </a></li>
+                <li><a href="#experiences" class="menu-btn">Experiences</a></li>
+                <li><a href="#skills" class="menu-btn"> Skills </a></li>
                 <li><a href="#contact" class="menu-btn">Contact</a></li>
             </ul>
             <div class="menu-btn">
@@ -206,7 +210,7 @@
             <div class="contact-content">
                 <div class="column left">
                     <div class="text">Get in Touch</div>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos harum corporis fuga corrupti. Doloribus quis soluta nesciunt veritatis vitae nobis?</p>
+                    <p>If you have any queries. Be free to ask me by sending mail through email.</p>
                     <div class="icons">
                         <div class="row">
                             <i class="fas fa-user"></i>
@@ -233,20 +237,20 @@
                 </div>
                 <div class="column right">
                     <div class="text">Message me</div>
-                    <form onsubmit="sendEmail(); reset(); return False;">
+                    <form method="POST" action="">
                         <div class="fields">
                             <div class="field name">
-                                <input type="text" placeholder="Name" required>
+                                <input type="text" class="name" id="name" placeholder="Name" required>
                             </div>
                             <div class="field email">
-                                <input type="email" placeholder="Email" required>
+                                <input type="email" class="email" id="email" placeholder="Email" required>
                             </div>
                         </div>
                         <div class="field">
-                            <input type="text" placeholder="Subject" required>
+                            <input type="text" class="sub" id="sub" placeholder="Subject" required>
                         </div>
                         <div class="field textarea">
-                            <textarea cols="30" rows="10" placeholder="Message.." required></textarea>
+                            <textarea cols="30" rows="10" class="msg" id="msg" placeholder="Message.." required></textarea>
                         </div>
                         <div class="button-area">
                             <button type="submit">Send message</button>
@@ -261,23 +265,5 @@
     <footer>
         <span>Created By <a href="https://www.codingnepalweb.com">Muksamhang Thebe</a> | <span class="far fa-copyright"></span> 2022 All rights reserved.</span>
     </footer>
-
-    <script src="script.js"></script>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
-    <script>
-      function sendEmail(){
-        Email.send({
-          Host:"smtp.gmail.com",
-          Username:"muksamthebe10@gmail.com",
-          Password:"mantraband",
-          To:"muksamthebe10@gmail.com",
-          From:document.getElementById("email").value,
-          Subject:"This is the subject",
-          Body:"and this is the body"
-        }).then(
-          message => alert(message)
-        );
-      }
-    </script>
 </body>
 </html>

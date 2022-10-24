@@ -237,20 +237,20 @@
                 </div>
                 <div class="column right">
                     <div class="text">Message me</div>
-                    <form method="POST" action="">
+                    <form>
                         <div class="fields">
                             <div class="field name">
-                                <input type="text" class="name" id="name" placeholder="Name" required>
+                                <input type="text" name="name" placeholder="Name" required>
                             </div>
                             <div class="field email">
-                                <input type="email" class="email" id="email" placeholder="Email" required>
+                                <input type="email" name="email" placeholder="Email" required>
                             </div>
                         </div>
                         <div class="field">
-                            <input type="text" class="sub" id="sub" placeholder="Subject" required>
+                            <input type="text" name="subject" placeholder="Subject" required>
                         </div>
                         <div class="field textarea">
-                            <textarea cols="30" rows="10" class="msg" id="msg" placeholder="Message.." required></textarea>
+                            <textarea cols="30" rows="10" name="message" placeholder="Message.." required></textarea>
                         </div>
                         <div class="button-area">
                             <button type="submit">Send message</button>
@@ -265,5 +265,25 @@
     <footer>
         <span>Created By <a href="https://www.codingnepalweb.com">Muksamhang Thebe</a> | <span class="far fa-copyright"></span> 2022 All rights reserved.</span>
     </footer>
+    <script>
+        let url="https://script.google.com/macros/s/AKfycbwbbj3twipsvbYMZtPJMD4OH9nsLPEZLqXXLCmYlHxFTAu8Mx87MDL7CRyySA_34Y_z/exec"
+        let name = document.querySelector("name");
+        let email = document.querySelector("email");
+        let subject = document.querySelector("subject");
+        let message = document.querySelector("message");
+        form.addEventListener("submit",(e)=>{
+            e.preventDefault();
+            submit.value="submitting.."
+            fetch(url,{method:"POST",body:new FormData(form)})
+            .then(res=>res.text())
+            .then(data=>{
+                message.innerHTML=data;
+            })
+            catch(err=>{
+                message.innerHTML = err;
+            })
+        })
+
+    </script>
 </body>
 </html>
